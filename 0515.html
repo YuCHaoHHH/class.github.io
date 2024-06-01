@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0515page</title>
+</head>
+<body>
+    <h1>亂數的作業</h1>
+    <p id="e1"></p>
+    <p id="e2">Number</p>
+    <button onclick="fun1()">時間顯示</button>
+    <p id="timeDisplay"></p>
+    <script>
+        function displayRandomNumber() {
+            var ranNum = Math.random();
+            document.getElementById("e1").innerHTML = ranNum;
+            if (ranNum > 0.5) {
+                document.getElementById("e2").innerHTML = "Greater than 0.5";
+            } else {
+                document.getElementById("e2").innerHTML = "Less than 0.5";
+            }
+        }
+
+        displayRandomNumber(); 
+
+        function fun1() {
+            var timeHour = new Date().getHours();
+            var timeM = new Date().getMinutes();
+            var msg = "";
+            if (timeHour < 12) {
+                msg = "AM";
+            } else if (timeHour == 12) {
+                msg = "中午";
+            } else {
+                msg = "PM";
+            }
+            document.getElementById("timeDisplay").innerHTML = msg + " " + timeHour + "點" + timeM + "分";
+        }
+    </script>
+</body>
+</html>

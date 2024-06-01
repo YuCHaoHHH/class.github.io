@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全域變數測試</title>
+</head>
+<body>
+    <p>Global Variable Test</p>
+    <p id="ex1"></p>
+    <p id="ex2"></p>
+    <p id="ex3"></p>
+    <p id="ex"></p>
+    
+    <script>
+        var msg = "AAAAAAAAA"; //Global
+        document.getElementById('ex1').innerHTML="BBBB";
+        document.getElementById('ex2').innerHTML=txtfun();
+        document.getElementById('ex3').innerHTML="DDDD";
+        function txtfun(){
+            var msg="QQQQQ"; //Local
+            return msg;
+        }
+        var student ={
+            firstname:"SCU",
+            lastname:"University",
+            id:"A12345678",
+            stuname:function(){
+                return this.firstname+" "+this.lastname;
+            }
+        };
+        document.getElementById("ex").innerHTML=student.stuname();
+
+    </script>
+</body>
+</html>

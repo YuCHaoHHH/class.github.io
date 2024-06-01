@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0508 PAGE4</title>
+    <script>
+        function toC(fdegree){
+            var c=(fdegree-32)*(5/9);
+            return c;
+        }
+        function toF(cdegree){
+            var f=(cdegree*9/5+32);
+            window.alert('溫度為'+f);
+        }
+    </script>
+</head>
+<body>
+    <h1 style="text-align: center;">溫度轉換作業</h1>
+    <hr>
+    <p id="ex"></p>
+    <button onclick="toF(34)">轉換為華氏溫度</button>
+    <script>
+        document.getElementById('ex').innerHTML='Result ='+toC(104)+'攝氏度';
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>影像地圖示範</title>
+    <link rel="mystyle" href="mystyle.css">
+</head>
+<body>
+    <h1 style="text-align: center;color: red">台灣旅遊導覽</h1>
+    <p>
+        <img src="taiwanmap.jpg"width="400" height="600" usemap="#mymap" alt="台灣地圖">
+
+        <map name="#mymap">
+            <area shape="rect" coords="250,60,320,70" 
+            href="http://www.scu.edu.tw" target="_blank" alt="台北市">
+            <area shape="circle" coords="240,215,50" 
+            href="nantao.html" alt="南投縣" target="_blank">
+            <area shape="poly" coords="300,320,240,320,250,380" 
+            href="taidon.html"  target="_blank">
+        </map>
+    </p>
+</body>
+</html>

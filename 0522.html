@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Loop Test</h1>
+    <h2 id="msg"></h2>
+    <hr>
+    <h2 id="loop2"></h2>
+    <hr>
+    <h3 id="loop3"></h3>
+    <hr>
+    <h4 id="loop4"></h4>
+    <script>
+        var sum = 0;
+        var str = "";
+        for(var counter = 1; counter <= 100; counter++) {
+            sum += counter;
+            str += "counter " + counter + ", sum = " + sum + "<br>";
+        }
+        document.getElementById("msg").innerHTML = str;
+
+        //=============================================
+        var i = 1;
+        var s = 0;
+        var strtext = "";
+        while(i <= 100) {
+            s += i;
+            strtext += "counter = " + i + ", sum = " + s + "<br>";
+            i++;
+        }
+        document.getElementById("loop2").innerHTML = strtext;
+        //=============================================
+        var c = 1;
+        var s = 0;
+        var str = "";
+        do {
+            s += c;
+            str += "counter = " + c + ", sum = " + s + "<br>";
+            c++;
+        } while (c <= 100);
+        document.getElementById("loop3").innerHTML = str;
+        //====================================================
+        var result = "";
+        for (var i = 1; i <= 9; i++) {
+            for (var j = 1; j <= 9; j++) {
+                var s = i * j;
+                result += i + "*" + j + "=" + s + "<br>";
+            }
+        }
+        document.getElementById("loop4").innerHTML = result;
+    </script>
+     <div>
+        <h2>Time and Hour Example</h2>
+    </div>
+    <button onclick="func1()">取得時間</button>
+    <div id="hour"></div>
+    <div id="msg"></div>
+    <script>
+        function func1() {
+            const now = new Date();
+            const timeHour = now.getHours();
+            const timeMin = now.getMinutes();
+            const txtText = (timeHour >= 12) ? "下午" : "上午";
+            const displayHour = (timeHour % 12) || 12; // Converts 24-hour format to 12-hour format and handles midnight (0)
+            const formattedMin = timeMin.toString().padStart(2, '0'); // Ensures minutes are always two digits
+
+            document.getElementById("hour").innerHTML = `Hour=${displayHour}:${formattedMin}`;
+            document.getElementById("msg").innerHTML = `Now=${txtText}`;
+        }
+    </script>
+</body>
+</html>
